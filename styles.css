@@ -109,8 +109,11 @@ section {
 @media (max-width: 768px) {
     /* Programs Section: Stack the program boxes vertically on small screens */
     .program-box {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+    justify-content: center; /* Aligns the boxes horizontally */
+    gap: 20px; /* Space between the boxes */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Ensures the boxes wrap on smaller screens */
     }
 
     .program {
