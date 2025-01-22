@@ -58,6 +58,7 @@ section {
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+    flex-wrap: wrap;  /* Allow the items to wrap on smaller screens */
 }
 
 .program {
@@ -67,12 +68,14 @@ section {
     border-radius: 10px;
     width: 250px;
     transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .program:hover {
     transform: scale(1.05);
 }
 
+/* Timeline Section */
 .timeline {
     background: linear-gradient(to right, #2c9c56, #1b5e20);
     color: white;
@@ -95,6 +98,7 @@ section {
     width: 70%;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .event:hover {
@@ -103,11 +107,35 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Programs Section: Stack the program boxes vertically on small screens */
+    .program-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .program {
+        width: 90%;  /* Make the program boxes full width */
+    }
+
+    /* Timeline Section: Stack the events vertically */
+    .timeline-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .event {
-        width: 90%;
+        width: 90%;  /* Make the event boxes full width */
+    }
+
+    /* Contact Section: Adjust padding and text for small screens */
+    .contact p {
+        font-size: 1em;
+    }
+
+    .cta {
+        font-size: 1em;
     }
 }
-
 
 /* Contact Section */
 .contact {
@@ -153,3 +181,4 @@ footer {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
